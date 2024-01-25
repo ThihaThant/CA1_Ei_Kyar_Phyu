@@ -1,0 +1,14 @@
+
+camera offset(later)
+
+ei kyar phyu
+use json to save enemy killed and player position
+Shader graph(magazine glow,death animation)
+lighting
+kill count excel(json)
+
+Thiha 
+use excel to save level
+animations
+lightsaber two hand
+level game over enemy idle(obesrver design pattern)
