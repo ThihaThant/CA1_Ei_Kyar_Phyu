@@ -1,3 +1,34 @@
 library
+Temp
+Logs
+obj
+.vs
+Blank VR Project.sln
+CA1.sln
+CA1_Ei_Kyar_Phyu.sln
+ISDT CA1_animation_healthBar.sln
+ISDT CA1_animationAndHealthBar.sln
+ISDT CA1_animationAndHealthBarAndNavMesh.sln
+ISDT CA1_enemyDoneAndMainMenuUIAndScript - Copy.sln
+ISDT CA1_enemyDoneAndMainMenuUIAndScript.sln
+ISDT CA1_finalForSure - Copy.sln
+ISDT CA1_finalForSure.sln
+ISDT CA1_gunDone - Animation.sln
+ISDT CA1_gunDone.sln
+ISDT CA1_level1Done.sln
+ISDT CA1_robot1 - Copy (2).sln
+ISDT CA1.sln
+ISDT CA1_robot1.sln
+ISDT CA1_robot1_2812.sln
+ISDT CA1_robot1_2812_Magazine.sln
+ISDT CA1_vision2 - Copy.sln
+Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj
+Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj
+ISDT CA1_vision2.sln
+PrimeTween.Debug.csproj
+PrimeTween.Demo.csproj
+Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj
+PrimeTween.Installer.csproj
+ISDT CA1_soundAndMagazine.sln
 UserSettings
 .vsconfig
