@@ -32,3 +32,4 @@ PrimeTween.Installer.csproj
 ISDT CA1_soundAndMagazine.sln
 UserSettings
 .vsconfig
+Assembly-CSharp.csproj
