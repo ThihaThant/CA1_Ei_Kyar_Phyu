@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
         GameObject _blood = Instantiate(Blood_ps, transform.position, Quaternion.identity);
 
         Health_amt = Mathf.Max(Health_amt); // Ensure health doesn't go below 0
-
+        gameObject.transform.parent.GetComponent<Enemy>().SetTriggerAllLOD("Hit");
 
         if (Health_amt == 0f)
         {
