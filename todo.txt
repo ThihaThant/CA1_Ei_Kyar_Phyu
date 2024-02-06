@@ -6,9 +6,10 @@ use json to save enemy killed and player position
 Shader graph(magazine glow,death animation)
 lighting
 kill count excel(json)
+save level (json)
 
 Thiha 
-use excel to save level
+use excel to save user
 animations
 lightsaber two hand
 level game over enemy idle(obesrver design pattern)
