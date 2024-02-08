@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
         {
             if (death == false)
             {
-
+                parent.GetComponent<NavMeshAgent>().isStopped = true;
                 parent.SetTriggerAllLOD("Death");
                 death = true;
             }
@@ -69,10 +69,10 @@ public class EnemyController : MonoBehaviour
         GameObject _blood = Instantiate(Blood_ps, transform.position, Quaternion.identity);
 
         Health_amt = Mathf.Max(Health_amt); // Ensure health doesn't go below 0
-        gameObject.transform.parent.GetComponent<Enemy>().SetTriggerAllLOD("Hit");
 
         if (Health_amt == 0f)
         {
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             _nav.isStopped = true;
             foreach (var item in animators)
             {
@@ -101,7 +101,7 @@ public class EnemyController : MonoBehaviour
                 // Activate the canvas for the mutant enemy
                 if (canvasForMutant != null)
                 {
-
+                    kill_all_enemies = false;
                    Vector3 canvasPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f; // Adjust distance as needed
 
                     // Create a canvas as a child of the player's camera
@@ -159,6 +159,11 @@ public class EnemyController : MonoBehaviour
                 thirdmagazine.SetActive(true);
             }
 
+        }
+        else
+        {
+
+            gameObject.transform.parent.GetComponent<Enemy>().SetTriggerAllLOD("Hit");
         }
 
     }
