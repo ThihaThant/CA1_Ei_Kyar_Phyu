@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.AI;
+using System;
 
 public class EnemyController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class EnemyController : MonoBehaviour
     public GameObject canvasForMutant;
     private Animator[] animators;
     private NavMeshAgent _nav;
+    public static bool kill_all_enemies;
+    private Enemy parent;
+    private bool death;
     // private int playerScore = 0;
     //  public GameObject firstGem;
     //  public GameObject controller;
@@ -25,15 +29,26 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
+
+        death = false;
         animators = transform.parent.GetComponentsInChildren<Animator>();
         _nav = transform.parent.GetComponent<NavMeshAgent>();
+        parent = gameObject.transform.parent.GetComponent<Enemy>();
     }
 
     private void Update()
     {
         HealthBar_canvas.transform.LookAt(Camera.main.transform.position);
         UpdateHealthBar();
+        if (kill_all_enemies)
+        {
+            if (death == false)
+            {
 
+                parent.SetTriggerAllLOD("Death");
+                death = true;
+            }
+        }
     }
 
    /* private void OnTriggerEnter(Collider collision)
@@ -80,6 +95,7 @@ public class EnemyController : MonoBehaviour
 
             if (gameObject.CompareTag("MutantEnemy") || PatrolPointsList.me.playerScore == 11)
             {
+                kill_all_enemies = true;
                 Debug.Log("win");
            //     Transform playerCamera = FindPlayerCamera();
                 // Activate the canvas for the mutant enemy
@@ -162,5 +178,9 @@ public class EnemyController : MonoBehaviour
     {
         float fillAmount = Health_amt / HealthMax_amt;
         Health_image.fillAmount = fillAmount;
+    }
+    public void kill()
+    {
+        kill_all_enemies = true;
     }
 }
