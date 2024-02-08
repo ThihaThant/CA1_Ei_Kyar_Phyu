@@ -1,0 +1,38 @@
+
+
+ HSSFRow newRow = worksheet.GetRow(destinationRowNum);
+HSSFRow sourceRow = worksheet.GetRow(sourceRowNum);
+
+// If the row exist in destination, push down all rows by 1 else create a new row
+if (newRow != null)
+{
+    worksheet.ShiftRows(destinationRowNum, worksheet.LastRowNum, 1);
+}
+else
+{
+    newRow = worksheet.CreateRow(destinationRowNum);
+}
+
+
+-------------------------
+
+static void InsertRows(ref HSSFSheet sheet1, int fromRowIndex, int rowCount)
+    {
+        sheet1.ShiftRows(fromRowIndex, sheet1.LastRowNum, rowCount, true, false, true);
+
+        for (int rowIndex = fromRowIndex; rowIndex < fromRowIndex + rowCount; rowIndex++)
+        {
+            HSSFRow rowSource = sheet1.GetRow(rowIndex + rowCount);
+            HSSFRow rowInsert = sheet1.CreateRow(rowIndex);
+            rowInsert.Height = rowSource.Height;
+            for (int colIndex = 0; colIndex < rowSource.LastCellNum; colIndex++)
+            {
+                HSSFCell cellSource = rowSource.GetCell(colIndex);
+                HSSFCell cellInsert = rowInsert.CreateCell(colIndex);
+                if (cellSource != null)
+                {
+                    cellInsert.CellStyle = cellSource.CellStyle;
+                }
+            }
+        }
+    }
