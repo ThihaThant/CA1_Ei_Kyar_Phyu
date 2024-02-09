@@ -20,6 +20,16 @@ public class EnemyController : MonoBehaviour
     public static bool kill_all_enemies;
     private Enemy parent;
     private bool death;
+
+
+    [SerializeField] SkinnedMeshRenderer BodyMesh;
+    [SerializeField] SkinnedMeshRenderer JointsMesh;
+
+    private Material BodyMaterial;
+    private Material JointsMaterial;
+
+    public float DissolveRate = 0.0125f;
+    public float refreshRate = 0.025f;
     // private int playerScore = 0;
     //  public GameObject firstGem;
     //  public GameObject controller;
@@ -34,6 +44,15 @@ public class EnemyController : MonoBehaviour
         animators = transform.parent.GetComponentsInChildren<Animator>();
         _nav = transform.parent.GetComponent<NavMeshAgent>();
         parent = gameObject.transform.parent.GetComponent<Enemy>();
+
+        if (BodyMesh != null)
+        {
+            BodyMaterial = BodyMesh.material;
+        }
+        if (JointsMesh != null)
+        {
+            JointsMaterial = JointsMesh.material;
+        }
     }
 
     private void Update()
@@ -78,6 +97,8 @@ public class EnemyController : MonoBehaviour
             {
                 item.SetTrigger("Death");
             }
+            float delayTime = 2.0f;
+            StartCoroutine(DissolveCoroutine(delayTime));
             //Transform parentTransform = transform.parent;
 
             //  Destroy(transform.parent.gameObject,10f);
@@ -167,6 +188,21 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+    IEnumerator DissolveCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        float counter = 0;
+        while (BodyMaterial.GetFloat("_DissolveAmount") < 1)
+        {
+            counter += DissolveRate;
+            BodyMaterial.SetFloat("_DissolveAmount", counter);
+            JointsMaterial.SetFloat("_DissolveAmount", counter);
+            yield return new WaitForSeconds(refreshRate);
+        }
+    }
+
+
 
    /* Transform FindPlayerCamera()
     {
