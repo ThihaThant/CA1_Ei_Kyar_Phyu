@@ -10,7 +10,6 @@ public class SceneTransitionButton : MonoBehaviour
     public float transitionTime = 2.0f;
     public CanvasGroup mainMenu;
 
-
     public void OnButtonClick()
     {
         StartCoroutine(LoadScene());
@@ -54,5 +53,6 @@ public class SceneTransitionButton : MonoBehaviour
     public void Level2()
     {
         GameObject.Find("XR Origin (XR Rig)").transform.position=Vector3.zero;
+        EnemyController.kill_all_enemies = false;
     }
 }

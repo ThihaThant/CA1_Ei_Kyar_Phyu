@@ -63,8 +63,7 @@ public class EnemyController : MonoBehaviour
         {
             if (death == false)
             {
-                parent.GetComponent<NavMeshAgent>().isStopped = true;
-                parent.SetTriggerAllLOD("Death");
+                TakeDamage(Health_amt);
                 death = true;
             }
         }
@@ -98,7 +97,7 @@ public class EnemyController : MonoBehaviour
                 item.SetTrigger("Death");
             }
             float delayTime = 2.0f;
-            StartCoroutine(DissolveCoroutine(delayTime));
+            //StartCoroutine(DissolveCoroutine(delayTime));
             //Transform parentTransform = transform.parent;
 
             //  Destroy(transform.parent.gameObject,10f);
@@ -114,15 +113,14 @@ public class EnemyController : MonoBehaviour
             // playerScore += 1;
             PatrolPointsList.me.playerScore += 1;
 
-            if (gameObject.CompareTag("MutantEnemy") || PatrolPointsList.me.playerScore == 11)
+            if ((gameObject.CompareTag("MutantEnemy") || PatrolPointsList.me.playerScore == 11) && EnemyController.kill_all_enemies==false)    
             {
-                kill_all_enemies = true;
+                EnemyController.kill_all_enemies = true;
                 Debug.Log("win");
            //     Transform playerCamera = FindPlayerCamera();
                 // Activate the canvas for the mutant enemy
                 if (canvasForMutant != null)
                 {
-                    kill_all_enemies = false;
                    Vector3 canvasPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f; // Adjust distance as needed
 
                     // Create a canvas as a child of the player's camera
