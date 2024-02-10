@@ -24,6 +24,10 @@ public class GameManager : Singleton<GameManager>
 
     List<AsyncOperation> _loadOperations;
 
+    public GameObject LevelOneScore;
+    public GameObject LevelTwoScore;
+    public GameObject MenuCanvas;
+
 
     private void Start()
     {
@@ -36,6 +40,13 @@ public class GameManager : Singleton<GameManager>
         // Load the initial scene, such as the Main Menu.
         // LoadLevel("MainMenu");
         StartCoroutine(DisplayImageForTime(3f));
+
+        CheckScene();
+    }
+
+    private void Update()
+    {
+        CheckScene();
     }
 
     private IEnumerator DisplayImageForTime(float displayTime)
@@ -139,6 +150,22 @@ public class GameManager : Singleton<GameManager>
     {
         PlayerPrefs.SetFloat(BrightnessKey, brightness);
         PlayerPrefs.Save();
+    }
+
+    private void CheckScene()
+    {
+        if (_currentLevelName == "Level1")
+        {
+            LevelTwoScore.SetActive(false);
+            LevelOneScore.SetActive(true);
+            MenuCanvas.SetActive(true);
+        }
+        else if (_currentLevelName == "Level2")
+        {
+            LevelOneScore.SetActive(false);
+            LevelTwoScore.SetActive(true);
+            MenuCanvas.SetActive(true);
+        }
     }
 }
 //}

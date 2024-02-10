@@ -423,12 +423,12 @@
       <HintPath>Assets\_MyProject\Plugins\NPOI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NPOI.OOXML">
-      <HintPath>Assets\_MyProject\Plugins\NPOI.OOXML.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="uPIeMenu">
       <HintPath>Assets\Plugins\uPi(e) Menu\Scripts\uPIeMenu.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>Assets\_MyProject\Plugins\NPOI.OOXML.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
