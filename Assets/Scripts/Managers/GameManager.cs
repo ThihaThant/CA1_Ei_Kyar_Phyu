@@ -83,6 +83,8 @@ public class GameManager : Singleton<GameManager>
     // Called when an asynchronous load operation is completed.
     void OnLoadOperationComplete(AsyncOperation ao)
     {
+
+        MenuCanvas.GetComponent<SceneJSON>().loadPrefs();
         if (_loadOperations.Contains(ao))
         {
             _loadOperations.Remove(ao);
@@ -176,7 +178,6 @@ public class GameManager : Singleton<GameManager>
             LevelTwoScore.SetActive(false);
             LevelOneScore.SetActive(true);
             MenuCanvas.SetActive(true);
-
             Vector3 leveloneTransform = newTransform.position;
             gameData.UpdateLevelOneLocation(leveloneTransform);
 

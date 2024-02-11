@@ -16,6 +16,18 @@ public class SceneJSON : MonoBehaviour
     [SerializeField] private TMP_Text levelOneScoreDisplay;
     [SerializeField] private TMP_Text levelTwoScoreDisplay;
 
+    public void Start()
+    {
+        //File path same as on top
+        string filePath = Application.dataPath + "/Scripts/Output/" + Player.player_id + "SaveData.json";
+        if (System.IO.File.Exists(filePath))
+        {
+            string json = System.IO.File.ReadAllText(filePath);
+            //Load Scriptable object as json
+
+            JsonUtility.FromJsonOverwrite(json, GameData);
+        }
+    }
     public void Update()
     {
         if ( GameManager.Instance.CurrentLevelName == "Level1" || GameManager.Instance.CurrentLevelName == "Level2")
@@ -31,7 +43,7 @@ public class SceneJSON : MonoBehaviour
         //whichever file path you want
         String path = Application.dataPath + "/Scripts/Output/";
         //json file name
-        String jsonName = "saveData.json";
+        String jsonName =Player.player_id+ "saveData.json";
         //if don't have file path, create path
         if (!Directory.Exists(path))
         {
@@ -48,7 +60,7 @@ public class SceneJSON : MonoBehaviour
     {
 
         //File path same as on top
-        string filePath = Application.dataPath + "/Scripts/Output/SaveData.json";
+        string filePath = Application.dataPath + "/Scripts/Output/"+Player.player_id+"SaveData.json";
         if (System.IO.File.Exists(filePath))
         {
             string json = System.IO.File.ReadAllText(filePath);

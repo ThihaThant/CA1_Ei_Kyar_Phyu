@@ -12,20 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b62201e532b1448c36fcb3085174a, type: 3}
   m_Name: NewGameData
   m_EditorClassIdentifier: 
-  LevelOnePosition: {x: -0.8749927, y: 0.010001242, z: -7.5180855}
+  LevelOnePosition: {x: -0.1041129, y: 0.010001361, z: 1.3222445}
   LevelTwoPosition: {x: 0, y: 0, z: 0}
-  LevelOneScore: 3
+  LevelOneScore: 0
   LevelTwoScore: 0
-  robot_enemy_11: {fileID: 0}
-  robot_enemy_12: {fileID: 0}
-  robot_enemy_13: {fileID: 0}
-  robot_enemy_14: {fileID: 0}
-  robot_enemy_15: {fileID: 0}
-  robot_enemy_16: {fileID: 0}
-  robot_enemy_17: {fileID: 0}
   LevelOneRobots:
   - id: 11
-    active: 1
+    active: 0
     enemy: {fileID: 8775198500854583619, guid: 528bf01f6741bd84bbc229b1a3bdc8c8, type: 3}
   - id: 12
     active: 1

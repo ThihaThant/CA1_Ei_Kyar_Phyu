@@ -39,6 +39,7 @@ public class Login : MonoBehaviour
                 if (password.text == sheet.GetRow(i).GetCell(2).ToString())
                 {
                     Debug.Log(username.text);
+                    Player.player_id = sheet.GetRow(i).GetCell(0).ToString();
                 }
             }
         }

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float Health_amt;
     public float HealthMax_amt;
     public GameObject dealth_pp;
-
+    public static string player_id;
     public PostProcessVolume postProcessVolume;
     public GameObject canvasForGameOver;
 
