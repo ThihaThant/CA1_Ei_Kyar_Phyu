@@ -106,8 +106,12 @@ public class EnemyController : MonoBehaviour
             {
                 item.SetTrigger("Death");
             }
-            float delayTime = 2.0f;
-            StartCoroutine(DissolveCoroutine(delayTime));
+
+            if (!gameObject.CompareTag("MutantEnemy"))
+            {
+                float delayTime = 2.0f;
+                StartCoroutine(DissolveCoroutine(delayTime));
+            }
             //Transform parentTransform = transform.parent;
 
             //  Destroy(transform.parent.gameObject,10f);
