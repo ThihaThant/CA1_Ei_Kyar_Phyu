@@ -26,12 +26,12 @@ public class GameDataSO : ScriptableObject
     public int LevelOneScore;
     public int LevelTwoScore;
 
-
     [System.Serializable]
     public class RobotInLevelOne
     {
         public string id;
         public bool active;
+        public GameObject enemy;
     }
 
     public RobotInLevelOne[] LevelOneRobots;
@@ -102,6 +102,57 @@ public class GameDataSO : ScriptableObject
         }
     }
 
+    public void ResetToDefaultsForLevelOne()
+    {
+        // Reset positions
+        LevelOnePosition = Vector3.zero;
 
+        // Reset scores
+        LevelOneScore = 0;
+
+    }
+
+    public void ResetToDefaultsForLevelTwo()
+    {
+        // Reset positions
+        LevelTwoPosition = Vector3.zero;
+
+        // Reset scores
+        LevelTwoScore = 0;
+
+
+    }
+    public void ResetActiveStatusforLevelOne()
+    {
+        // Reset active status for robots in LevelOne
+        ResetActiveStatus(LevelOneRobots);
+
+    }
+
+    public void ResetActiveStatusforLevelTwo()
+    {
+        // Reset active status for robots in LevelTwo
+        ResetActiveStatus(LevelTwoRobots);
+    }
+
+    // Helper method to reset active status of robots in an array
+    private void ResetActiveStatus(RobotInLevelOne[] robots)
+    {
+        foreach (var robot in robots)
+        {
+            // Reset active status to false
+            robot.active = true;
+        }
+    }
+
+    // Helper method to reset active status of robots in an array
+    private void ResetActiveStatus(RobotInLevelTwo[] robots)
+    {
+        foreach (var robot in robots)
+        {
+            // Reset active status to false
+            robot.active = true;
+        }
+    }
+    //}
 }
-//}

@@ -116,7 +116,9 @@ public class EnemyController : MonoBehaviour
 
             //  Destroy(transform.parent.gameObject,10f);
             //Destroy(gameObject);
-            Destroy(gameObject.transform.parent.gameObject, 4f);
+            //  Destroy(gameObject.transform.parent.gameObject, 4f);
+            //gameObject.transform.parent.gameObject.SetActive(false);
+            StartCoroutine(DeactivateParentAfterDelay(4f));
 
             string robotId = gameObject.transform.parent.gameObject.tag;
 
@@ -237,18 +239,24 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
-
-   /* Transform FindPlayerCamera()
+    IEnumerator DeactivateParentAfterDelay(float delay)
     {
-        GameObject[] cameras = GameObject.FindGameObjectsWithTag("PlayerCamera"); // Find cameras with a specific tag
-        if (cameras.Length > 0)
-        {
-            Transform camerasTransform = cameras[0].GetComponent<Transform>();
-            return camerasTransform; // Assuming there's only one player camera, return the first found
-        }
-        return null; // Return null if no camera is found
-    } */
+        yield return new WaitForSeconds(delay);
+        gameObject.transform.parent.gameObject.SetActive(false);
+    }
+
+
+
+    /* Transform FindPlayerCamera()
+     {
+         GameObject[] cameras = GameObject.FindGameObjectsWithTag("PlayerCamera"); // Find cameras with a specific tag
+         if (cameras.Length > 0)
+         {
+             Transform camerasTransform = cameras[0].GetComponent<Transform>();
+             return camerasTransform; // Assuming there's only one player camera, return the first found
+         }
+         return null; // Return null if no camera is found
+     } */
 
     private void UpdateHealthBar()
     {

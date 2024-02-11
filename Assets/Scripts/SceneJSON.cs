@@ -21,6 +21,7 @@ public class SceneJSON : MonoBehaviour
         if ( GameManager.Instance.CurrentLevelName == "Level1" || GameManager.Instance.CurrentLevelName == "Level2")
         {
             UpdateScore();
+
         }
        
     }
@@ -60,11 +61,15 @@ public class SceneJSON : MonoBehaviour
             player.transform.position = GameData.LevelOnePosition;
             levelOneScoreDisplay.text = "Score:" + GameData.LevelOnePlayerScore;
 
+            
+            
             foreach (var robotData in GameData.LevelOneRobots)
             {
                 // Find the GameObject with a tag matching the ID
-                GameObject robot = GameObject.FindGameObjectWithTag(robotData.id);
 
+                //GameObject robot = GameObject.FindGameObjectWithTag(robotData.id)
+
+                GameObject robot=GameObject.FindGameObjectWithTag(robotData.id);
                 if (robot != null)
                 {
                     // Set the active status of the robot GameObject
@@ -72,6 +77,11 @@ public class SceneJSON : MonoBehaviour
                 }
                 else
                 {
+                    if (robotData.active)
+                    {
+
+                        GameObject.Instantiate(robotData.enemy);
+                    }
                     Debug.LogWarning("No GameObject found with tag: " + robotData.id);
                 }
             }
@@ -82,6 +92,26 @@ public class SceneJSON : MonoBehaviour
             player.transform.position = GameData.LevelTwoPosition;
             levelTwoScoreDisplay.text = "Score:" + GameData.LevelTwoPlayerScore;
         }
+    }
+
+    public void Restart()
+    {
+      
+        if(GameManager.Instance.CurrentLevelName == "Level1") 
+        {
+            GameData.ResetActiveStatusforLevelOne();
+            GameData.ResetToDefaultsForLevelOne();
+        }
+        else if (GameManager.Instance.CurrentLevelName == "Level2")
+        {
+            GameData.ResetActiveStatusforLevelTwo();
+            GameData.ResetToDefaultsForLevelTwo();
+        }
+
+        savePrefs();
+        loadPrefs();
+
+
     }
 
     private void UpdateScore()

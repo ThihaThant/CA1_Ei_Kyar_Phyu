@@ -20,25 +20,38 @@ public class SceneTransitionButton : MonoBehaviour
         if (GameManager.Instance != null)
         {
             string sceneToUnload = GameManager.Instance.CurrentLevelName;
-
-            loadingScreen.SetActive(true);
-
-            float timer = 0f;
-            
-            while (timer < transitionTime)
+            if (loadingScreen != null && slider != null)
             {
-                timer += Time.deltaTime;
-                float progress = Mathf.Clamp01(timer / transitionTime);
-                // slider.value = progress;
-                Debug.Log(progress + " snfosdnvio");
-                slider.value = progress;
+                loadingScreen.SetActive(true);
 
-                yield return null;
+                // loadingScreen.SetActive(true);
+
+                float timer = 0f;
+
+                while (timer < transitionTime)
+                {
+                    timer += Time.deltaTime;
+                    float progress = Mathf.Clamp01(timer / transitionTime);
+                    // slider.value = progress;
+                    Debug.Log(progress + " snfosdnvio");
+                    slider.value = progress;
+
+                    yield return null;
+                }
+
             }
             AsyncOperation asyncOperation = GameManager.Instance.transferToAnotherScene(newSceneName, sceneToUnload);
-            loadingScreen.SetActive(false);
-            // Ensure the slider reaches the end when the transition is completed
-            slider.value = 1;
+
+            if (loadingScreen != null && slider!= null)
+            {
+                 loadingScreen.SetActive(false);
+                 // Ensure the slider reaches the end when the transition is completed
+                 slider.value = 1;
+            }
+
+            /* loadingScreen.SetActive(false);
+             // Ensure the slider reaches the end when the transition is completed
+             slider.value = 1;*/
         }
         else
         {
@@ -48,7 +61,11 @@ public class SceneTransitionButton : MonoBehaviour
     }
     public void HideMenu()
     {
-        mainMenu.alpha = 0f;
+        if(mainMenu != null)
+        {
+            mainMenu.alpha = 0f;
+        }
+       
     }
     public void Level2()
     {

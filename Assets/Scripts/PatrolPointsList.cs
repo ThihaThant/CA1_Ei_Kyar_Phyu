@@ -41,6 +41,14 @@ public class PatrolPointsList : MonoBehaviour
 
     void Update()
     {
-
+        if (GameManager.Instance.CurrentLevelName == "Level1")
+        {
+            playerScore = Gamedata.LevelOnePlayerScore;
+        }
+        else
+      if (GameManager.Instance.CurrentLevelName == "Level2")
+        {
+            playerScore = Gamedata.LevelTwoPlayerScore;
+        }
     }
 }

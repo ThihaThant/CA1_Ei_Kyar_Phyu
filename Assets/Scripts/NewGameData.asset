@@ -12,25 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b62201e532b1448c36fcb3085174a, type: 3}
   m_Name: NewGameData
   m_EditorClassIdentifier: 
-  LevelOnePosition: {x: 0.5370429, y: 0.010001242, z: 1.8113722}
+  LevelOnePosition: {x: -0.8749927, y: 0.010001242, z: -7.5180855}
   LevelTwoPosition: {x: 0, y: 0, z: 0}
-  LevelOneScore: 0
+  LevelOneScore: 3
   LevelTwoScore: 0
+  robot_enemy_11: {fileID: 0}
+  robot_enemy_12: {fileID: 0}
+  robot_enemy_13: {fileID: 0}
+  robot_enemy_14: {fileID: 0}
+  robot_enemy_15: {fileID: 0}
+  robot_enemy_16: {fileID: 0}
+  robot_enemy_17: {fileID: 0}
   LevelOneRobots:
   - id: 11
     active: 1
+    enemy: {fileID: 8775198500854583619, guid: 528bf01f6741bd84bbc229b1a3bdc8c8, type: 3}
   - id: 12
     active: 1
+    enemy: {fileID: 1003247375046041688, guid: c24defe2a1a47ed4481f1a59f807c996, type: 3}
   - id: 13
     active: 1
+    enemy: {fileID: 4599522075961195229, guid: 3a226facb68ea5744af97d146192e2a0, type: 3}
   - id: 14
     active: 1
+    enemy: {fileID: 4773233590766410770, guid: 690e80a6a694fd7459fc5ce22f42edd2, type: 3}
   - id: 15
     active: 1
+    enemy: {fileID: 502676662044152611, guid: f091dcaa55b20c048af95f67762e7bb5, type: 3}
   - id: 16
     active: 1
+    enemy: {fileID: 1415147299796595038, guid: a2d319f34af8bbf4589a9456474817bf, type: 3}
   - id: 17
     active: 1
+    enemy: {fileID: 5105960914247187040, guid: 860419de066034448b0e069dc036ebf5, type: 3}
   LevelTwoRobots:
   - id: 11
     active: 1
