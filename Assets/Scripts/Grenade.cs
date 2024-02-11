@@ -8,6 +8,7 @@ public class Grenade : MonoBehaviour
 {
     private bool hasPin;
     public GameObject splint;
+    public GameObject ExplosionPS;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +50,7 @@ public class Grenade : MonoBehaviour
     public IEnumerator Explosion()
     {
         yield return new WaitForSeconds(3f);
-        
+        ExplosionPS.SetActive(true);
         gameObject.GetComponent<SphereCollider>().enabled=true;
         StartCoroutine(ContinueExplode());
     }
