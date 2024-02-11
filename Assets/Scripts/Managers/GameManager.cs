@@ -28,6 +28,10 @@ public class GameManager : Singleton<GameManager>
     public GameObject LevelTwoScore;
     public GameObject MenuCanvas;
 
+    public GameDataSO gameData;
+    public Transform playerTransform;
+    public GameObject player;
+
 
     private void Start()
     {
@@ -41,12 +45,24 @@ public class GameManager : Singleton<GameManager>
         // LoadLevel("MainMenu");
         StartCoroutine(DisplayImageForTime(3f));
 
-        CheckScene();
+        // CheckScene(playerTransform);
+        if (_currentLevelName == "Level1")
+        {
+
+            player.transform.position = gameData.LevelOneLocation;
+         //   levelOneScoreDisplay.text = ("Score:" + gameData.LevelOnePlayerScore);
+
+        }
+        else if (_currentLevelName == "Level2")
+        {
+            player.transform.position = gameData.LevelTwoLocation;
+           // levelTwoScoreDisplay.text = ("Score:" + gameData.LevelTwoPlayerScore);
+        }
     }
 
     private void Update()
     {
-        CheckScene();
+        CheckScene(playerTransform);
     }
 
     private IEnumerator DisplayImageForTime(float displayTime)
@@ -123,6 +139,7 @@ public class GameManager : Singleton<GameManager>
             Debug.LogError("Invalid scene names provided.");
             return null;
         }
+        
 
         // Unload the scene to be replaced
         UnloadLevel(sceneToUnload);
@@ -131,7 +148,7 @@ public class GameManager : Singleton<GameManager>
         //LoadLevel(newLevelName);
 
         AsyncOperation operation = LoadLevel(newLevelName);
-
+        player.transform.parent.parent.transform.position = gameData.LevelOneLocation;
         // Update the current level name
         _currentLevelName = newLevelName;
         return operation;
@@ -152,19 +169,26 @@ public class GameManager : Singleton<GameManager>
         PlayerPrefs.Save();
     }
 
-    private void CheckScene()
+    private void CheckScene(Transform newTransform)
     {
         if (_currentLevelName == "Level1")
         {
             LevelTwoScore.SetActive(false);
             LevelOneScore.SetActive(true);
             MenuCanvas.SetActive(true);
+
+            Vector3 leveloneTransform = newTransform.position;
+            gameData.UpdateLevelOneLocation(leveloneTransform);
+
         }
         else if (_currentLevelName == "Level2")
         {
             LevelOneScore.SetActive(false);
             LevelTwoScore.SetActive(true);
             MenuCanvas.SetActive(true);
+
+            Vector3 leveltwoTransform = newTransform.position;
+            gameData.UpdateLevelTwoLocation(leveltwoTransform);
         }
     }
 }

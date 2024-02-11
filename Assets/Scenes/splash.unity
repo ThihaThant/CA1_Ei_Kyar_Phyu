@@ -1159,7 +1159,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 374918811}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 691279391}
+        m_TargetAssemblyTypeName: SceneJSON, Assembly-CSharp
+        m_MethodName: savePrefs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &374918811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,6 +1809,9 @@ MonoBehaviour:
   LevelOneScore: {fileID: 1357230841}
   LevelTwoScore: {fileID: 951981422}
   MenuCanvas: {fileID: 691279385}
+  gameData: {fileID: 11400000, guid: cf94f19da3ca3b944a1735bf2a7ef895, type: 2}
+  playerTransform: {fileID: 1464393823}
+  player: {fileID: 1326538513}
 --- !u!1 &691279385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1825,7 @@ GameObject:
   - component: {fileID: 691279389}
   - component: {fileID: 691279388}
   - component: {fileID: 691279387}
+  - component: {fileID: 691279391}
   m_Layer: 0
   m_Name: Canvas_for_menu
   m_TagString: Untagged
@@ -1922,6 +1938,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &691279391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691279385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b7f639d5add244eb269bd7ce3ec579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameData: {fileID: 11400000, guid: cf94f19da3ca3b944a1735bf2a7ef895, type: 2}
+  player: {fileID: 1464393817}
 --- !u!1 &700135740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,6 +3488,16 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1464393817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1326538505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1464393823 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1326538505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1467590594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,7 +3848,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1511062613}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 691279391}
+        m_TargetAssemblyTypeName: SceneJSON, Assembly-CSharp
+        m_MethodName: loadPrefs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1511062613
 MonoBehaviour:
   m_ObjectHideFlags: 0
