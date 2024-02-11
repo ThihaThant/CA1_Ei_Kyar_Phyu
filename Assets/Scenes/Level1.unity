@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5948,7 +5948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8813,7 +8813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10904,6 +10904,7 @@ GameObject:
   - component: {fileID: 1243678337}
   - component: {fileID: 1243678336}
   - component: {fileID: 1243678338}
+  - component: {fileID: 1243678339}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -11001,6 +11002,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneLight: {fileID: 1243678336}
+--- !u!114 &1243678339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243678335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1261926372
 GameObject:
   m_ObjectHideFlags: 0
@@ -13796,7 +13820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13939,7 +13963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14128,6 +14152,10 @@ PrefabInstance:
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_Name
       value: Robot_enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16167,7 +16195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

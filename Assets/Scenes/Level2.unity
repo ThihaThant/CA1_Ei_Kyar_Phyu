@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3091,6 +3091,7 @@ GameObject:
   - component: {fileID: 90286375}
   - component: {fileID: 90286374}
   - component: {fileID: 90286373}
+  - component: {fileID: 90286376}
   m_Layer: 0
   m_Name: Directional Light_1
   m_TagString: Untagged
@@ -3188,6 +3189,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &90286376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90286372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!65 &91711829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14461,6 +14485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390121125}
   - component: {fileID: 400750225}
+  - component: {fileID: 400750226}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -14869,6 +14894,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &400750226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390435433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &401026482
 GameObject:
   m_ObjectHideFlags: 0
@@ -15892,6 +15940,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16051,6 +16103,10 @@ PrefabInstance:
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_Name
       value: Robot_enemy_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21263,6 +21319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot_enemy_3
       objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26346,6 +26406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 711967304}
   - component: {fileID: 718140028}
+  - component: {fileID: 718140029}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -26755,6 +26816,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &718140029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711628420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &720014503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34481,6 +34565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot_enemy_7
       objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34627,6 +34715,10 @@ PrefabInstance:
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_Name
       value: Robot_enemy_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36597,6 +36689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot_enemy_10
       objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37779,6 +37875,10 @@ PrefabInstance:
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_Name
       value: Robot_enemy_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40853,6 +40953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088261907}
   - component: {fileID: 1082113831}
+  - component: {fileID: 1088261908}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -40907,6 +41008,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1088166083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1088261908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087953887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!23 &1088941688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46625,6 +46749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295484200}
   - component: {fileID: 1301656860}
+  - component: {fileID: 1301656861}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -46741,6 +46866,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1301656861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295176164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &1307985679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49056,6 +49204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot_enemy_5
       objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -49393,6 +49545,10 @@ PrefabInstance:
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_Name
       value: Robot_enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56534,6 +56690,10 @@ PrefabInstance:
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_Name
       value: Robot_enemy_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -71270,6 +71430,7 @@ MonoBehaviour:
   - {fileID: 1268447118}
   - {fileID: 39177864}
   playerScore: 0
+  Gamedata: {fileID: 0}
 --- !u!4 &1946778937
 Transform:
   m_ObjectHideFlags: 0
@@ -78595,6 +78756,10 @@ PrefabInstance:
     - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
       propertyPath: m_Name
       value: Robot_enemy_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821129244690772793, guid: 6316479896a8eb347bfb25c33df969e1, type: 3}
+      propertyPath: m_TagString
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

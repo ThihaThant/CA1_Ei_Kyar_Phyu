@@ -99,6 +99,7 @@ public class EnemyController : MonoBehaviour
 
         if (Health_amt == 0f)
         {
+            
             gameObject.GetComponent<BoxCollider>().enabled = false;
             _nav.isStopped = true;
             foreach (var item in animators)
@@ -112,6 +113,19 @@ public class EnemyController : MonoBehaviour
             //  Destroy(transform.parent.gameObject,10f);
             //Destroy(gameObject);
             Destroy(gameObject.transform.parent.gameObject, 4f);
+
+            string robotId = gameObject.transform.parent.gameObject.tag;
+
+            if (GameManager.Instance.CurrentLevelName == "Level1")
+            {
+                Gamedata.UpdateLevelOneRobotStatus(robotId, false);
+                //  levelOneScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
+            }
+             else if (GameManager.Instance.CurrentLevelName == "Level2")
+             {
+                Gamedata.UpdateLevelTwoRobotStatus(robotId, false);
+                 //levelTwoScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
+             }
             Vector3 enemyPosition = transform.position; // Get the enemy's position
 
             // Store only the x and z coordinates

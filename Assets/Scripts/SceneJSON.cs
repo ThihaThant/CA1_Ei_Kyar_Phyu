@@ -6,6 +6,7 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Playables;
 
 public class SceneJSON : MonoBehaviour
 {
@@ -58,6 +59,22 @@ public class SceneJSON : MonoBehaviour
         {
             player.transform.position = GameData.LevelOnePosition;
             levelOneScoreDisplay.text = "Score:" + GameData.LevelOnePlayerScore;
+
+            foreach (var robotData in GameData.LevelOneRobots)
+            {
+                // Find the GameObject with a tag matching the ID
+                GameObject robot = GameObject.FindGameObjectWithTag(robotData.id);
+
+                if (robot != null)
+                {
+                    // Set the active status of the robot GameObject
+                    robot.SetActive(robotData.active);
+                }
+                else
+                {
+                    Debug.LogWarning("No GameObject found with tag: " + robotData.id);
+                }
+            }
 
         }
         else if(GameManager.Instance.CurrentLevelName == "Level2")

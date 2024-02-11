@@ -12,7 +12,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b62201e532b1448c36fcb3085174a, type: 3}
   m_Name: NewGameData
   m_EditorClassIdentifier: 
-  LevelOnePosition: {x: -2.365373, y: 0.010001361, z: -6.038335}
+  LevelOnePosition: {x: 0.5370429, y: 0.010001242, z: 1.8113722}
   LevelTwoPosition: {x: 0, y: 0, z: 0}
   LevelOneScore: 0
   LevelTwoScore: 0
+  LevelOneRobots:
+  - id: 11
+    active: 1
+  - id: 12
+    active: 1
+  - id: 13
+    active: 1
+  - id: 14
+    active: 1
+  - id: 15
+    active: 1
+  - id: 16
+    active: 1
+  - id: 17
+    active: 1
+  LevelTwoRobots:
+  - id: 11
+    active: 1
+  - id: 12
+    active: 1
+  - id: 13
+    active: 1
+  - id: 14
+    active: 1
+  - id: 15
+    active: 1
+  - id: 16
+    active: 1
+  - id: 17
+    active: 1
+  - id: 18
+    active: 1
+  - id: 19
+    active: 1
+  - id: 20
+    active: 1
+  - id: 21
+    active: 1

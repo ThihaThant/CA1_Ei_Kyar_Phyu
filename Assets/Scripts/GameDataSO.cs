@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -25,6 +26,26 @@ public class GameDataSO : ScriptableObject
     public int LevelOneScore;
     public int LevelTwoScore;
 
+
+    [System.Serializable]
+    public class RobotInLevelOne
+    {
+        public string id;
+        public bool active;
+    }
+
+    public RobotInLevelOne[] LevelOneRobots;
+
+    [System.Serializable]
+    public class RobotInLevelTwo
+    {
+        public string id;
+        public bool active;
+    }
+
+    public RobotInLevelTwo[] LevelTwoRobots;
+
+
     public int LevelOnePlayerScore { get => this.LevelOneScore; }
     public int LevelTwoPlayerScore { get => this.LevelTwoScore; }
 
@@ -48,6 +69,38 @@ public class GameDataSO : ScriptableObject
         LevelTwoScore = newScore;
     }
 
+
+    public void UpdateLevelOneRobotStatus(string robotId, bool newStatus)
+    {
+        // Iterate through the robots array
+        for (int i = 0; i < LevelOneRobots.Length; i++)
+        {
+            // Check if the current robot has the specified ID
+            if (LevelOneRobots[i].id == robotId)
+            {
+                // Update the active status of the robot
+                LevelOneRobots[i].active = newStatus;
+                // Optionally, you can break the loop if you're sure each ID is unique
+                // break;
+            }
+        }
+    }
+
+    public void UpdateLevelTwoRobotStatus(string robotId, bool newStatus)
+    {
+        // Iterate through the robots array
+        for (int i = 0; i < LevelTwoRobots.Length; i++)
+        {
+            // Check if the current robot has the specified ID
+            if (LevelTwoRobots[i].id == robotId)
+            {
+                // Update the active status of the robot
+                LevelTwoRobots[i].active = newStatus;
+                // Optionally, you can break the loop if you're sure each ID is unique
+                // break;
+            }
+        }
+    }
 
 
 }
