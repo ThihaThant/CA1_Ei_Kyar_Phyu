@@ -1417,6 +1417,7 @@ MonoBehaviour:
   JointsMesh: {fileID: 6882173372726447291}
   DissolveRate: 0.0125
   refreshRate: 0.025
+  Gamedata: {fileID: 11400000, guid: cf94f19da3ca3b944a1735bf2a7ef895, type: 2}
 --- !u!114 &8760362231091945373
 MonoBehaviour:
   m_ObjectHideFlags: 0

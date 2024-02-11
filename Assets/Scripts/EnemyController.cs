@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.AI;
 using System;
+using TMPro;
 
 public class EnemyController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] SkinnedMeshRenderer BodyMesh;
     [SerializeField] SkinnedMeshRenderer JointsMesh;
 
+
     private Material BodyMaterial;
     private Material JointsMaterial;
 
@@ -36,6 +38,8 @@ public class EnemyController : MonoBehaviour
     // public AudioClip gemAppearSound;
     //  private AudioSource gemAudioSource;
     //  private Coroutine gemSoundCoroutine;
+
+    public GameDataSO Gamedata;
 
     private void Start()
     {
@@ -53,6 +57,9 @@ public class EnemyController : MonoBehaviour
         {
             JointsMaterial = JointsMesh.material;
         }
+
+      
+
     }
 
     private void Update()
@@ -67,6 +74,8 @@ public class EnemyController : MonoBehaviour
                 death = true;
             }
         }
+
+        
     }
 
    /* private void OnTriggerEnter(Collider collision)
@@ -112,6 +121,16 @@ public class EnemyController : MonoBehaviour
 
             // playerScore += 1;
             PatrolPointsList.me.playerScore += 1;
+            if(GameManager.Instance.CurrentLevelName== "Level1")
+            {
+                Gamedata.UpdateLevelOneScore(PatrolPointsList.me.playerScore);
+              //  levelOneScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
+            }
+            else if (GameManager.Instance.CurrentLevelName == "Level2")
+            {
+                Gamedata.UpdateLevelTwoScore(PatrolPointsList.me.playerScore);
+                //levelTwoScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
+            }
 
             if ((gameObject.CompareTag("MutantEnemy") || PatrolPointsList.me.playerScore == 11) && EnemyController.kill_all_enemies==false)    
             {
@@ -222,4 +241,5 @@ public class EnemyController : MonoBehaviour
     {
         kill_all_enemies = true;
     }
+
 }

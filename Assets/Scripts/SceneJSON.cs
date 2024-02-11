@@ -4,12 +4,25 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.PlayerLoop;
 
 public class SceneJSON : MonoBehaviour
 {
     public GameDataSO GameData; //  Your Scriptable Object Script
     public GameObject player;
 
+    [SerializeField] private TMP_Text levelOneScoreDisplay;
+    [SerializeField] private TMP_Text levelTwoScoreDisplay;
+
+    public void Update()
+    {
+        if ( GameManager.Instance.CurrentLevelName == "Level1" || GameManager.Instance.CurrentLevelName == "Level2")
+        {
+            UpdateScore();
+        }
+       
+    }
 
     public void savePrefs()
     {
@@ -44,10 +57,27 @@ public class SceneJSON : MonoBehaviour
         if (GameManager.Instance.CurrentLevelName == "Level1")
         {
             player.transform.position = GameData.LevelOnePosition;
+            levelOneScoreDisplay.text = "Score:" + GameData.LevelOnePlayerScore;
+
         }
-        else
+        else if(GameManager.Instance.CurrentLevelName == "Level2")
         {
             player.transform.position = GameData.LevelTwoPosition;
+            levelTwoScoreDisplay.text = "Score:" + GameData.LevelTwoPlayerScore;
+        }
+    }
+
+    private void UpdateScore()
+    {
+        if (GameManager.Instance.CurrentLevelName == "Level1" && PatrolPointsList.me!=null)
+        {
+           
+            levelOneScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
+
+        }
+        else if (GameManager.Instance.CurrentLevelName == "Level2" && PatrolPointsList.me != null)
+        {
+            levelTwoScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
         }
     }
 }

@@ -1952,6 +1952,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameData: {fileID: 11400000, guid: cf94f19da3ca3b944a1735bf2a7ef895, type: 2}
   player: {fileID: 1464393817}
+  levelOneScoreDisplay: {fileID: 453147554}
+  levelTwoScoreDisplay: {fileID: 330882913}
 --- !u!1 &700135740
 GameObject:
   m_ObjectHideFlags: 0

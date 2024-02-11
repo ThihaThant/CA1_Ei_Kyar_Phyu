@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 
 public class PatrolPointsList : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PatrolPointsList : MonoBehaviour
     public List<GameObject> Patrol_list_ten = new List<GameObject>();
     public int playerScore = 0;
 
+    public GameDataSO Gamedata;
+
     public void Awake()
     {
         me = this;
@@ -25,7 +28,15 @@ public class PatrolPointsList : MonoBehaviour
 
     void Start()
     {
-
+        if (GameManager.Instance.CurrentLevelName == "Level1")
+        {
+            playerScore = Gamedata.LevelOnePlayerScore;
+        }
+        else
+      if (GameManager.Instance.CurrentLevelName == "Level2")
+        {
+            playerScore = Gamedata.LevelTwoPlayerScore;
+        }
     }
 
     void Update()
