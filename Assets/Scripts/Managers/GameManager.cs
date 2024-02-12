@@ -194,6 +194,14 @@ public class GameManager : Singleton<GameManager>
             Vector3 leveltwoTransform = newTransform.position;
             gameData.UpdateLevelTwoLocation(leveltwoTransform);
         }
+        else if (_currentLevelName != "Level1" && _currentLevelName != "Level2")
+        {
+            LevelOneScore.SetActive(false);
+            LevelTwoScore.SetActive(false);
+            MenuCanvas.SetActive(false);
+
+
+        }
     }
 }
 //}
