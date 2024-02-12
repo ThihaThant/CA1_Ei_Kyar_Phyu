@@ -19,6 +19,8 @@ TagManager:
   - 19
   - 20
   - 21
+  - Gun
+  - LightSaber
   layers:
   - Default
   - TransparentFX

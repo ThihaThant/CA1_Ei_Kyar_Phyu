@@ -7,6 +7,7 @@ using TMPro;
 
 public class EnemyController : MonoBehaviour
 {
+    public GameObject grenade;
     public Image Health_image;
     public float Health_amt, HealthMax_amt;
     public GameObject HealthBar_canvas;
@@ -97,7 +98,7 @@ public class EnemyController : MonoBehaviour
 
         Health_amt = Mathf.Max(Health_amt); // Ensure health doesn't go below 0
 
-        if (Health_amt == 0f)
+        if (Health_amt <= 0f)
         {
             
             gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -122,12 +123,12 @@ public class EnemyController : MonoBehaviour
 
             string robotId = gameObject.transform.parent.gameObject.tag;
 
-            if (GameManager.Instance.CurrentLevelName == "Level1")
+            if (GameManager.Instance.CurrentLevelName == "Level1" && robotId!="MutantEnemy")
             {
                 Gamedata.UpdateLevelOneRobotStatus(robotId, false);
                 //  levelOneScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
             }
-             else if (GameManager.Instance.CurrentLevelName == "Level2")
+             else if (GameManager.Instance.CurrentLevelName == "Level2" && robotId != "MutantEnemy")
              {
                 Gamedata.UpdateLevelTwoRobotStatus(robotId, false);
                  //levelTwoScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
@@ -141,12 +142,12 @@ public class EnemyController : MonoBehaviour
 
             // playerScore += 1;
             PatrolPointsList.me.playerScore += 1;
-            if(GameManager.Instance.CurrentLevelName== "Level1")
+            if(GameManager.Instance.CurrentLevelName== "Level1" && robotId != "MutantEnemy")
             {
                 Gamedata.UpdateLevelOneScore(PatrolPointsList.me.playerScore);
               //  levelOneScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
             }
-            else if (GameManager.Instance.CurrentLevelName == "Level2")
+            else if (GameManager.Instance.CurrentLevelName == "Level2" && robotId != "MutantEnemy")
             {
                 Gamedata.UpdateLevelTwoScore(PatrolPointsList.me.playerScore);
                 //levelTwoScoreDisplay.text = "Score:" + PatrolPointsList.me.playerScore;
@@ -184,13 +185,21 @@ public class EnemyController : MonoBehaviour
                 // Activate the pickup object
                 firstmagazine.SetActive(true);
 
-            } 
-            else if (PatrolPointsList.me.playerScore == 3)
+            }
+            else if (PatrolPointsList.me.playerScore == 2)
             {
                 GameObject secondmagazine = Instantiate(magazineTwenty, magazinePosition, Quaternion.identity);
 
                 // Activate the mana object
                 secondmagazine.SetActive(true);
+
+            }
+            else if (PatrolPointsList.me.playerScore == 3)
+            {
+                GameObject firstGrenade = Instantiate(grenade, magazinePosition, Quaternion.identity);
+
+                // Activate the mana object
+                firstGrenade.SetActive(true);
 
             }
             else if(PatrolPointsList.me.playerScore == 4)
@@ -200,7 +209,14 @@ public class EnemyController : MonoBehaviour
                 // Activate the pickup object
                 thirdmagazine.SetActive(true);
             }
+            else if (PatrolPointsList.me.playerScore == 5)
+            {
+                GameObject firstGrenade = Instantiate(grenade, magazinePosition, Quaternion.identity);
 
+                // Activate the mana object
+                firstGrenade.SetActive(true);
+
+            }
             else if(PatrolPointsList.me.playerScore == 7)
             {
                 GameObject secondmagazine = Instantiate(magazineTwenty, magazinePosition, Quaternion.identity);
@@ -208,7 +224,14 @@ public class EnemyController : MonoBehaviour
                 // Activate the mana object
                 secondmagazine.SetActive(true);
             }
+            else if (PatrolPointsList.me.playerScore == 8)
+            {
+                GameObject firstGrenade = Instantiate(grenade, magazinePosition, Quaternion.identity);
 
+                // Activate the mana object
+                firstGrenade.SetActive(true);
+
+            }
             else if(PatrolPointsList.me.playerScore == 9)
             {
                 GameObject thirdmagazine = Instantiate(magazineThirty, magazinePosition, Quaternion.identity);

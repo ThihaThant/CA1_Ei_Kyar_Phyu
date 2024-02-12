@@ -21,5 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 372fc5a23c253dc419bdbdfdb1bcdb38
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c0f7e5820bae11148939b8a2feec816b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 87e5bceb25a20ed4499b058fa5533ee6, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 12cf47531b51bb548a57468e7cdccea8, type: 2}

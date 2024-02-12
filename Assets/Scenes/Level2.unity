@@ -71430,7 +71430,7 @@ MonoBehaviour:
   - {fileID: 1268447118}
   - {fileID: 39177864}
   playerScore: 0
-  Gamedata: {fileID: 0}
+  Gamedata: {fileID: 11400000, guid: cf94f19da3ca3b944a1735bf2a7ef895, type: 2}
 --- !u!4 &1946778937
 Transform:
   m_ObjectHideFlags: 0

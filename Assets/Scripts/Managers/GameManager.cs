@@ -83,8 +83,11 @@ public class GameManager : Singleton<GameManager>
     // Called when an asynchronous load operation is completed.
     void OnLoadOperationComplete(AsyncOperation ao)
     {
-
+        if(CurrentLevelName=="Level1" || CurrentLevelName == "Level2")
+        {
+            
         MenuCanvas.GetComponent<SceneJSON>().loadPrefs();
+        }
         if (_loadOperations.Contains(ao))
         {
             _loadOperations.Remove(ao);

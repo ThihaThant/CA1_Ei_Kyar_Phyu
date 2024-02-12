@@ -12,7 +12,6 @@ public class SceneJSON : MonoBehaviour
 {
     public GameDataSO GameData; //  Your Scriptable Object Script
     public GameObject player;
-
     [SerializeField] private TMP_Text levelOneScoreDisplay;
     [SerializeField] private TMP_Text levelTwoScoreDisplay;
 
@@ -58,7 +57,6 @@ public class SceneJSON : MonoBehaviour
 
     public void loadPrefs()
     {
-
         //File path same as on top
         string filePath = Application.dataPath + "/Scripts/Output/"+Player.player_id+"SaveData.json";
         if (System.IO.File.Exists(filePath))

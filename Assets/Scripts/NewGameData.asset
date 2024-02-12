@@ -18,7 +18,7 @@ MonoBehaviour:
   LevelTwoScore: 0
   LevelOneRobots:
   - id: 11
-    active: 0
+    active: 1
     enemy: {fileID: 8775198500854583619, guid: 528bf01f6741bd84bbc229b1a3bdc8c8, type: 3}
   - id: 12
     active: 1
